@@ -1,0 +1,61 @@
+html,
+body,
+header,
+.carousel {
+    height: 60vh;
+}
+
+body {
+    background: #fe8c00;
+}
+
+.btn-danger1 {
+    background: #fe8c00;
+}
+
+.search-div {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.control_icon {
+    width: 5px;
+    height: 10px;
+    color: black;
+}
+
+.custom-search {
+    width: 500px;
+    background-color: #fff;
+    color: #fe8c00;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+}
+
+.custom-search:focus {
+    outline: none;
+}
+
+@media (max-width: 740px) {
+    html,
+    body,
+    header,
+    .carousel {
+        height: 70vh;
+        width: 70wh;
+    }
+    .custom-search {
+        width: 100px;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 850px) {
+    html,
+    body,
+    header,
+    .carousel {
+        height: 100vh;
+    }
+}

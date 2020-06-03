@@ -1,0 +1,108 @@
+{% load cart_template_tags %}
+
+
+<nav class="navbar  fixed-top  navbar-expand-lg white  scrolling-navbar">
+    <div class="container-fluid ">
+
+      <!-- Brand -->
+      <a class="navbar-brand " href="/">
+        <small class="brand">EcomGhana</small>
+      </a>
+  
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+       <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Left -->
+        <ul class="navbar-nav m-auto">
+       
+        
+        <form class="" action="{%url 'core:shop'%}">
+                  <div class="input-group search-div m-auto">
+            
+  <input type="text" class="custom-search search-input"
+   placeholder="search for your favourite products ...... "
+    name="search">
+  <div class="input-group-append ml-3">
+   <button type="submit" class="input-group-text btn-danger1 text-white">Search <i class="fas fa-search ml-1"></i></button>
+  </div>
+</div>
+       
+
+    </form>
+        </ul>
+
+        <!-- Right -->
+        <ul class="navbar-nav">
+
+          {% if request.user.is_authenticated %}
+          <li class="nav-item dropdown">
+            
+                  <span class=" dropdown-toggle nav-link waves-effect cart" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user-circle "></i>
+                    Hi {{request.user}}
+                  </span>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="nav-link waves-effect" href="{% url 'account_logout' %}">
+                   <span class="clearfix d-none d-sm-inline-block btn-danger1 btn"> Logout </span>
+                  </a>
+                    <a class="dropdown-item " href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'core:order-summary' %}" class="nav-link waves-effect cart">
+              <span class="badge btn-danger1 z-depth-1 mr-1"> {{ request.user|cart_item_count }} </span>
+              <i class="fas fa-cart-plus "></i>
+              <span class="clearfix d-none d-sm-inline-block "> Cart </span>
+            </a>
+          </li>
+          
+          
+          {% else %}
+         
+
+         <li class="nav-item dropdown">
+            
+                  <span class="cart dropdown-toggle nav-link waves-effect" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Hello Login
+                  </span>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="btn btn-danger1 waves-effect " href="{% url 'account_login' %}">
+              <span class="clearfix d-none d-sm-inline-block "> Login </span>
+              </a>
+                    <div>
+                   
+                    <a class="waves-effect" href="{% url 'account_signup' %}">
+                     <p>are you a new customer</p>
+                     <span class="btn btn-link "> Signup </span>
+                  </a>
+                    </div>
+                    
+                  </div>
+                
+          </li>
+
+           <li class="nav-item">
+            <a href="{% url 'core:order-summary' %}" class="nav-link waves-effect cart">
+              <span class="badge red z-depth-1 mr-1"> {{ request.user|cart_item_count }} </span>
+              <i class="fas fa-cart-plus "></i>
+              <span class="clearfix d-none d-sm-inline-block"> Cart </span>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+        
+      </div>
+
+    </div>
+     
+  </nav>
+
+  

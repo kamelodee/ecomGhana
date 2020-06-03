@@ -1,0 +1,217 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <main class="">
+    <div class=" ">
+  <!--Carousel Wrapper-->
+  <div id="carousel-example-1z" class="carousel slide carousel-fade pt-4 md-cover container-fluid" data-ride="carousel">
+
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+      <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+    </ol>
+    <!--/.Indicators-->
+
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+
+      <!--First slide-->
+      <div class="carousel-item active">
+        <div class="view " style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/8-col/img%282%29.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <!-- Mask & flexbox options-->
+          <div class="mask d-flex justify-content-end align-items-end">
+           <!-- Content -->
+            <div class="text-center white-text mx-5 wow fadeIn">
+
+              <a  href="{%url 'core:shop'%}" class="btn">
+              Shop Now
+              </a>
+            </div>
+            <!-- Content -->
+
+          </div>
+          <!-- Mask & flexbox options-->
+
+        </div>
+      </div>
+      <!--/First slide-->
+
+      <!--Second slide-->
+      <div class="carousel-item">
+        <div class="view " style="background-image: url('https://storage.googleapis.com/hijup-production-sg-core/system/banners/primary/image/1607/MB-Equilibrium-Socks.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+          <!-- Mask & flexbox options-->
+          <div class="mask d-flex justify-content-end align-items-end">
+
+            <!-- Content -->
+            <div class="text-center white-text mx-5 wow fadeIn">
+
+              <a  href="{%url 'core:shop'%}" class="btn">
+              Shop Now
+                <i class="fas fa-cart ml-2"></i>
+              </a>
+            </div>
+            <!-- Content -->
+
+          </div>
+          <!-- Mask & flexbox options-->
+
+        </div>
+      </div>
+      <!--/Second slide-->
+
+      <!--Third slide-->
+      <div class="carousel-item">
+        <div class="view " style="background-image: url('https://storage.googleapis.com/hijup-production-sg-core/system/banners/primary/image/1596/MB-L_Mira-Ethnique.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+          <!-- Mask & flexbox options-->
+          <div class="mask d-flex justify-content-end align-items-end">
+
+            <!-- Content -->
+            <div class="text-center white-text mx-5 wow fadeIn">
+             
+              <a href="{%url 'core:shop'%}" class="btn">
+              Shop Now
+                <i class="fas fa-cart ml-2"></i>
+              </a>
+            </div>
+            <!-- Content -->
+
+          </div>
+          <!-- Mask & flexbox options-->
+
+        </div>
+      </div>
+      <!--/Third slide-->
+
+    </div>
+    <!--/.Slides-->
+
+    <!--Controls-->
+    <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+      <i class="fas fa-chevron-left fa-5x"></i>
+    </a>
+    <a class="carousel-control-next " href="#carousel-example-1z" role="button" data-slide="next">
+     <i class="fas fa-chevron-right fa-5x"></i>
+    </a>
+    <!--/.Controls-->
+
+  </div>
+  <!--/.Carousel Wrapper-->
+
+<div class=" container-fluid mt-2 mb-2 ">
+  <div class="row">
+    {% for store in object_list %}
+    <div class="col-sm card m-2 p-2">
+    <i class="fas fa-truck"></i>
+     {{store.storeType}}
+    </div>
+     {% endfor %}
+     <div class="col-sm card m-2 p-2 rounded">
+    <i class="fas fa-truck"></i>
+    <a href="{%url 'core:shop'%}" class=" btn-link">Official Shop</a>
+    </div>
+  </div>
+</div>
+
+
+      <!--Section: Products v.3-->
+      
+      <div class="card">
+      <section class="text-center mb-4  p-5  ">
+        <h1 class="recom-text">Recommended stores for you</h1>
+        <div class="row wow fadeIn">
+
+          {% for store in object_list %}
+          <div class="col-lg-3 col-md-6 mb-4">
+          <div class="col card  m-2 ">
+          
+          
+           <p>{{store.name}}</p>
+           <img src="https://storage.googleapis.com/hijup-production-sg-core/system/banners/primary/image/1596/MB-L_Mira-Ethnique.jpg" width="200" height="100"/>
+          <p>{{store.name}}</p>
+         <i class="fas fa-shopping-bag"></i>
+          groceris
+         <a href="{{ store.get_absolute_url }}" class="btn">
+          buy here
+          </a>
+          </div>
+          </div>
+         
+          {% endfor %}
+        </div>
+        
+
+      </section>
+      </div>
+      <!--Section: Products v.3-->
+      <div class="card">
+      <section class="text-center mb-4  p-5  ">
+        <h1 class="recom-text">Recommended products for you</h1>
+        <div class="row wow fadeIn">
+
+          {% for store in object_list %}
+          <div class="col-lg-3 col-md-6 mb-4">
+          <div class="col card  m-2 ">
+          
+          
+           <p>{{store.name}}</p>
+           <img src="https://storage.googleapis.com/hijup-production-sg-core/system/banners/primary/image/1596/MB-L_Mira-Ethnique.jpg" width="200" height="100"/>
+          <p>{{store.name}}</p>
+         <i class="fas fa-shopping-bag"></i>
+          groceris
+         <a href="{{ store.get_absolute_url }}" class="btn">
+          buy here
+          </a>
+          </div>
+          </div>
+         
+          {% endfor %}
+        </div>
+        
+
+      </section>
+      </div>
+      <!--Section: Products v.3-->
+
+      <!--Pagination-->
+
+      {% if is_paginated %}
+      <nav class="d-flex justify-content-center wow fadeIn">
+        <ul class="pagination pg-blue">
+
+          {% if page_obj.has_previous %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+          {% endif %}
+
+          <li class="page-item active">
+            <a class="page-link" href="?page={{ page_obj.number }}">{{ page_obj.number }}
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+
+          {% if page_obj.has_next %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+      {% endif %}
+
+    </div>
+  </main>
+
+{% endblock content %}
+
+

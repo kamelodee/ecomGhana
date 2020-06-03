@@ -1,0 +1,97 @@
+html,
+body,
+header,
+.carousel {
+    height: 60vh;
+}
+
+body {
+    background: white;
+}
+
+.productbg {
+    background: #fe8c00;
+}
+
+.btn-danger1 {
+    background: #fe8c00;
+}
+
+.btn-custom {
+    background: #4A00E0;
+}
+
+.brand {
+    color: black;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.brand:hover {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.search-div {
+    border-radius: 5px;
+    height: 45px;
+}
+
+.control_icon {
+    width: 5px;
+    height: 10px;
+    color: black;
+}
+
+.navbg {
+    background: white;
+}
+
+.custom-search {
+    width: 500px;
+    background-color: #fff;
+    color: #fe8c00;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+}
+
+.custom-search:focus {
+    outline: none;
+}
+
+.cart {
+    color: black;
+    font-weight: 600;
+}
+
+.recom-text {
+    color: black;
+    font-weight: 600;
+    -webkit-box-shadow: -1px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 3px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+@media (max-width: 740px) {
+    html,
+    body,
+    header,
+    .carousel {
+        height: 70vh;
+        width: 70wh;
+    }
+    .custom-search {
+        width: 100px;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 850px) {
+    html,
+    body,
+    header,
+    .carousel {
+        height: 100vh;
+    }
+}
